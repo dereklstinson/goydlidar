@@ -1,0 +1,13 @@
+.vscode/*
+CYdLidar.h
+angles.h
+lock.h
+locker.h
+serial.h
+thread.h
+timer.h
+utils.h
+v8stdint.h
+ydlidar_driver.h
+ydlidar_protocol.h
+libydlidar_driver.a
