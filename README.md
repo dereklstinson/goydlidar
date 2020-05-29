@@ -10,8 +10,9 @@ Warning, getting this to work is not intuitive.  I was going to try to get it to
 A lot of the API is written in Chinese.  I did a google translate on it, but it didn't help much. 
 
 Instructions.  
-Clone this library https://github.com/dereklstinson/goydlidar
-Then clone https://github.com/dereklstinson/ydlidar 
+Clone this library https://github.com/dereklstinson/goydlidar.
+
+Then clone https://github.com/dereklstinson/ydlidar.
 
 Since, I used the x4 branch here are the instructions on building that (I changed the place where it is cloned):
 If you use a different branch checkout a different one.  
