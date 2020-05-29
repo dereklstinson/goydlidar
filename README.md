@@ -59,4 +59,4 @@ Also you need to give non root access to the usb port that the ydlidar is connec
 sudo chmod 666 /dev/ttyUSB0
 ```
 
-This doesn't come without faults.  First, this package was created for the X4.  It may or may not work with any other device.  You will have to do your own hacking.  Second, type YDdriver methods don't all work.  They some of the methods return errors, and since I could get what I wanted to get done using type Lidar I didn't put much more effort into it. 
+This doesn't come without faults.  First, this package was created for the X4.  It may or may not work with any other device.  You will have to do your own hacking.  Second, type YDdriver methods don't all work.  Some of the methods return errors (probably not waiting long enough), and since I could get what I wanted to get done using type Lidar I didn't put much more effort into it. 
