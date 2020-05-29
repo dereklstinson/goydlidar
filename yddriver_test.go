@@ -2,13 +2,11 @@ package goydlidar
 
 import (
 	"fmt"
-	"runtime"
 	"testing"
 )
 
 func TestLidar(t *testing.T) {
 	nscans := 10
-	runtime.LockOSThread()
 	lidar := CreateLidar()
 	lidar.SetSerialPort(TypicalDevicePort)
 	lidar.SetFixedResolution(false)
