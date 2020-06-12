@@ -28,9 +28,8 @@ const (
 	DefaultTimeout      = uint32(C.DEFAULT_TIMEOUT)
 	DefaultHeartBeat    = uint32(C.DEFAULT_HEART_BEAT)
 	DefaultTimeoutCount = uint32(C.DEFAULT_TIMEOUT_COUNT)
-	MaxScanNodes        = uint32(C.MAX_SCAN_NODES)
+	MaxScanNodes        = uint(C.MAX_SCAN_NODES)
 	TypicalX4Baudrate   = uint32(128000)
-	TypicalDevicePort   = "/dev/ttyUSB0"
 )
 
 //DeviceHealth is the device health
@@ -101,8 +100,8 @@ func (y *YDdriver) IsScanning() bool {
 	return (bool)(C.YDLidarCGOisscanning(y.y))
 }
 
-//Disconnected checks to see if device is desconnected
-func (y *YDdriver) Disconnected() bool {
+//IsConnected checks to see if lidar is connected
+func (y *YDdriver) IsConnected() bool {
 	return (bool)(C.YDLidarCGOisconnected(y.y))
 }
 
@@ -162,6 +161,29 @@ func (y *YDdriver) StopMotor() error {
 
 //NodeInfo is the node info
 type NodeInfo C.node_info
+
+func (n NodeInfo) String() string {
+	return fmt.Sprintf("NodeInfo{\n SyncFlag: %d\n SyncQuality: %d\n AngleQ6CheckBit: %d\n DistanceQ2: %d\n TimeStamp: %d\n ScanFreqency: %d\n",
+		n.sync_flag, n.sync_quality, n.angle_q6_checkbit, n.distance_q2, n.stamp, n.scan_frequence)
+}
+
+//SyncFlag is a value of in the C.node_info struct
+func (n NodeInfo) SyncFlag() byte { return (byte)(n.sync_flag) }
+
+//SyncQuality is a value of in the C.node_info struct
+func (n NodeInfo) SyncQuality() uint16 { return (uint16)(n.sync_quality) }
+
+//AngleQ6CheckBit is a value of in the C.node_info struct
+func (n NodeInfo) AngleQ6CheckBit() uint16 { return (uint16)(n.angle_q6_checkbit) }
+
+//DistanceQ2 is a value of in the C.node_info struct
+func (n NodeInfo) DistanceQ2() uint16 { return (uint16)(n.distance_q2) }
+
+//TimeStamp is a value of in the C.node_info struct
+func (n NodeInfo) TimeStamp() uint64 { return (uint64)(n.stamp) }
+
+//ScanFreqency is a value of in the C.node_info struct
+func (n NodeInfo) ScanFreqency() byte { return (byte)(n.scan_frequence) }
 
 func cnodeinfotoNodeInfo(array []C.node_info) []NodeInfo {
 	n := make([]NodeInfo, len(array))

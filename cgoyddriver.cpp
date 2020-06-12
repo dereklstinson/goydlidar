@@ -95,8 +95,6 @@ result_t YDLidarCGOreset(YDLidarCGODriver driver, uint32_t timeout) {
 result_t YDLidarCGOgetScanFrequency(YDLidarCGODriver driver,
                                     scan_frequency *frequency,
                                     uint32_t timeout) {
-  // result_t getScanFrequency(scan_frequency &frequency,uint32_t timeout =
-  // DEFAULT_TIMEOUT);
   if (timeout == 0) {
     return driver->getScanFrequency(*frequency);
   }
@@ -106,8 +104,6 @@ result_t YDLidarCGOgetScanFrequency(YDLidarCGODriver driver,
 result_t YDLidarCGOsetScanFrequencyAdd(YDLidarCGODriver driver,
                                        scan_frequency *frequency,
                                        uint32_t timeout) {
-  // result_t setScanFrequencyAdd(scan_frequency &frequency,uint32_t timeout =
-  // DEFAULT_TIMEOUT);
   if (timeout == 0) {
     return driver->setScanFrequencyAdd(*frequency);
   }
@@ -117,8 +113,6 @@ result_t YDLidarCGOsetScanFrequencyAdd(YDLidarCGODriver driver,
 result_t YDLidarCGOsetScanFrequencyDis(YDLidarCGODriver driver,
                                        scan_frequency *frequency,
                                        uint32_t timeout) {
-  // result_t setScanFrequencyDis(scan_frequency &frequency,uint32_t timeout =
-  // DEFAULT_TIMEOUT);
   if (timeout == 0) {
     return driver->setScanFrequencyDis(*frequency);
   }
@@ -128,9 +122,7 @@ result_t YDLidarCGOsetScanFrequencyDis(YDLidarCGODriver driver,
 result_t YDLidarCGOsetScanFrequencyAddMic(YDLidarCGODriver driver,
                                           scan_frequency *frequency,
                                           uint32_t timeout) {
-  // result_t setScanFrequencyAddMic(scan_frequency &frequency,uint32_t timeout
-  // =
-  // DEFAULT_TIMEOUT);
+
   if (timeout == 0) {
     return driver->setScanFrequencyAddMic(*frequency);
   }
@@ -140,9 +132,7 @@ result_t YDLidarCGOsetScanFrequencyAddMic(YDLidarCGODriver driver,
 result_t YDLidarCGOsetScanFrequencyDisMic(YDLidarCGODriver driver,
                                           scan_frequency *frequency,
                                           uint32_t timeout) {
-  // result_t setScanFrequencyDisMic(scan_frequency &frequency,uint32_t timeout
-  // =
-  // DEFAULT_TIMEOUT);
+
   if (timeout == 0) {
     return driver->setScanFrequencyDisMic(*frequency);
   }
@@ -151,8 +141,7 @@ result_t YDLidarCGOsetScanFrequencyDisMic(YDLidarCGODriver driver,
 
 result_t YDLidarCGOgetSamplingRate(YDLidarCGODriver driver, sampling_rate *rate,
                                    uint32_t timeout) {
-  // result_t getSamplingRate(sampling_rate &rate,uint32_t timeout =
-  // DEFAULT_TIMEOUT);
+
   if (timeout == 0) {
     return driver->getSamplingRate(*rate);
   }
@@ -161,8 +150,7 @@ result_t YDLidarCGOgetSamplingRate(YDLidarCGODriver driver, sampling_rate *rate,
 
 result_t YDLidarCGOsetSamplingRate(YDLidarCGODriver driver, sampling_rate *rate,
                                    uint32_t timeout) {
-  // result_t setSamplingRate(sampling_rate *rate,uint32_t timeout =
-  // DEFAULT_TIMEOUT);
+
   if (timeout == 0) {
     return driver->setSamplingRate(*rate);
   }
