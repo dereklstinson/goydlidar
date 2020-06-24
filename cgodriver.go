@@ -546,6 +546,16 @@ func (l *LidarScan) GetRanges() (ranges []float32) {
 	return ranges
 }
 
+//SelfStamp is the time stamp given my the lidar
+func (l *LidarScan) SelfStamp() uint64 {
+	return uint64(C.CYdCGOLaserScanGetSelfTimeStamp(l.l))
+}
+
+//SystemStamp is the time stamp given by the the computer system
+func (l *LidarScan) SystemStamp() uint64 {
+	return uint64(C.CYdCGOLaserScanGetSystemTimeStamp(l.l))
+}
+
 /*
 //GetIntensities gets the intensities
 func (l *LidarScan) GetIntensities() (intensities []float32) {
